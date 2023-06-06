@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas
 
 # st.set_page_config(layout="wide")
 
@@ -18,3 +19,14 @@ with st.container():
 
 st.write("Below you can find python showcase projects. Feel free to contact me.")
 
+col3, col4 = st.columns(2)
+
+d_file = pandas.read_csv("data.csv", sep=";")
+
+with col3:
+    for idx, row in d_file[0:10].iterrows():
+        st.header(row["title"])
+
+with col4:
+    for idx, row in d_file[10:].iterrows():
+        st.header(row["title"])

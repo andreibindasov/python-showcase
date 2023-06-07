@@ -19,14 +19,20 @@ with st.container():
 
 st.write("Below you can find python showcase projects. Feel free to contact me.")
 
-col3, col4 = st.columns(2)
+col3, e_col, col4 = st.columns([1.5, 0.5, 1.5])
 
 d_file = pandas.read_csv("data.csv", sep=";")
 
 with col3:
     for idx, row in d_file[0:10].iterrows():
         st.header(row["title"])
+        st.write(row["description"])
+        st.image("images/" + row["image"])
+        st.write(f"[Source Code]({row['url']})")
 
 with col4:
-    for idx, row in d_file[10:].iterrows():
+    for idx, row in d_file[10:] .iterrows():
         st.header(row["title"])
+        st.write(row["description"])
+        st.image("images/" + row["image"])
+        st.write(f"[Source Code]({row['url']})")

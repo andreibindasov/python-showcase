@@ -9,8 +9,8 @@ def send_email(user_message):
     username = os.getenv("PYTHON_USER_EMAIL")
     phrase = os.getenv("PASSPHRASE")
 
-    receiver = ["abraxas777ainsoph@protonmail.com", "bindasov.andrei@gmail.com"]
-    # receiver = "bindasov.andrei@gmail.com"
+    receiver = ["email1@email.com", "email2@email.com"]
+
     context = ssl.create_default_context()
     # subject = user_email
     message = user_message
